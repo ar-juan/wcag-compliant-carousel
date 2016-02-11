@@ -1,0 +1,99 @@
+/* https://github.com/ar-juan/wcag-compliant-carousel */
+#wcag-carousel {
+    position: relative;
+}
+#wcag-carousel ul {
+    padding: 0;
+    margin: 0;
+}
+#wcag-carousel ul#wcag-carousel-controls {
+    list-style: none;
+}
+#wcag-carousel #carousel-image-and-controls {
+    position:relative;
+}
+#wcag-carousel .slide {
+  display: none;
+}
+#wcag-carousel .slide img {
+    width: 100%
+}
+#wcag-carousel .slide.current {
+  display: block;
+  z-index: 2;
+  text-align: center;
+}
+#wcag-carousel .btn-prev,
+#wcag-carousel .btn-next {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    margin-top: -4.5%;
+    padding: 1.5em;
+    transition: padding .4s ease-out;
+}
+#wcag-carousel .btn-prev { left:0; }
+#wcag-carousel .btn-next { right:0; }
+
+#wcag-carousel .btn-prev[disabled],
+#wcag-carousel .btn-next[disabled],
+#wcag-carousel .btn-prev[disabled]:hover,
+#wcag-carousel .btn-prev[disabled]:focus,
+#wcag-carousel .btn-next[disabled]:hover,
+#wcag-carousel .btn-next[disabled]:focus {
+    background-color: #9a9a9a;
+}
+
+#wcag-carousel .btn-next:hover, #wcag-carousel .btn-next:focus {
+    padding-right: 2em;
+}
+#wcag-carousel .btn-prev:hover, #wcag-carousel .btn-prev:focus {
+    padding-left: 2em;
+}
+#wcag-carousel #wcag-carousel-navigation {
+    text-align: center;
+    padding: 0.75em;
+}
+#wcag-carousel #wcag-carousel-navigation li {
+    display:inline-block;
+    margin: 0.25em .25em;
+}
+#wcag-carousel #wcag-carousel-navigation button {
+    background-size: cover;
+    height: 3.5em;
+    width: 7em;
+}
+#wcag-carousel #wcag-carousel-navigation button.current {
+    box-shadow: 0 0 0 3px #007bc7;
+}
+#wcag-carousel #wcag-carousel-navigation button:hover,
+#wcag-carousel #wcag-carousel-navigation button:focus {
+    box-shadow: 0 0 0 3px #ccc;
+}
+#wcag-carousel #wcag-carousel-counter {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0.6em;
+    min-width: 4em;
+    text-align: center;
+}
+
+@media only screen and (max-width: 40.0625em) {
+    #wcag-carousel #wcag-carousel-counter {
+        display: none;
+    }
+    #wcag-carousel .slide img {
+    }
+    #wcag-carousel #wcag-carousel-navigation button {
+        height: 1.6em;
+        width: 3.2em;
+    }
+    #wcag-carousel #wcag-carousel-navigation {
+        text-align: center;
+        padding: 0.25em;
+    }
+    /*#wcag-carousel .btn-prev, #wcag-carousel .btn-next {
+        display: none;
+    }*/
+}

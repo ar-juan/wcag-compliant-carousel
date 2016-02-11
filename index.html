@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/wcag-carousel.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="js/wcag-carousel.js"></script>
+		<style type="text/css">
+			/* Some sample css */
+			body {
+				margin: 0;
+			}	
+			.carousel {
+				width: 50%;
+				margin: auto auto;
+			}
+			#wcag-carousel-controls,
+			#wcag-carousel-counter {
+				background-color: #007bc7;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+        <div class="row collapse">
+        <div class="carousel" id="wcag-carousel">
+            <div id="carousel-image-and-controls">
+                <ul id="wcag-carousel-images">
+                    <li class="slide">
+                    	<!-- You may give the first its src already, might be a tiny bit faster -->
+                        <img data-src="https://upload.wikimedia.org/wikipedia/en/thumb/3/32/Thottiyodu_Scenery,_Kanyakumari_District.JPG/1024px-Thottiyodu_Scenery,_Kanyakumari_District.JPG" alt="Somewhere beautiful" />
+                    </li>
+                    <li class="slide">
+                        <img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Luthor_List_Mound.jpg/1024px-Luthor_List_Mound.jpg" alt="Some other place" />
+                    </li>
+                    <li class="slide">
+                        <img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Hopeton_Earthworks_wall.jpg/1024px-Hopeton_Earthworks_wall.jpg" alt="More green" />                    	
+                    </li>
+                </ul>
+                <ul id="wcag-carousel-controls" class="no-margin">
+                    <li>
+                        <button type="button" class="btn-prev">
+                            Prev
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn-next">
+                            Next
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <ul id="wcag-carousel-navigation" class="">
+                <li>
+                    <button data-slide="0" class="current" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/3/32/Thottiyodu_Scenery,_Kanyakumari_District.JPG/100px-Thottiyodu_Scenery,_Kanyakumari_District.JPG');">
+                    </button>                    
+                </li>
+                <li>
+                    <button data-slide="1" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Luthor_List_Mound.jpg/100px-Luthor_List_Mound.jpg');">
+                    </button>                    
+                </li>
+                <li>
+                    <button data-slide="2" style="background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Hopeton_Earthworks_wall.jpg/100px-Hopeton_Earthworks_wall.jpg'); background-size: cover;">
+                    </button>                    
+                </li>
+            </ul>
+            <div id="wcag-carousel-counter"></div>
+        </div>
+            <script>
+                var gallery = new wcagCarousel;
+                gallery.init({
+                    id: 'wcag-carousel',
+                    slidenav: true
+                });
+            </script>
+    </div>
+	</body>
+</html>
