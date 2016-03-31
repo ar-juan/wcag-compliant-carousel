@@ -5,10 +5,24 @@ var wcagCarousel = (function() {
 
     var carousel, slides, index, slidenav, settings;
 
+  // Helper functions
     function forEachElement(elements, fn) {
         for (var i = 0; i < elements.length; i++)
             fn(elements[i], i);
     }
+
+    var removeClass = function (element, className) {
+      return element.className = (" " + element.className + " ").replace(" " + className + " ", " ");
+    };
+
+    var addClass = function (element, className) {
+      return containsClass(element, className) ? false : (element.className += " " + className);
+    };
+
+    var containsClass = function (element, className) {
+      return (" " + element.className + " ").indexOf(" " + className + " ") > -1;
+    };
+  // End of: Helper functions
 
     var parseHTML = function(str) {
         var el =
@@ -86,11 +100,11 @@ var wcagCarousel = (function() {
 
 
         if(settings.slidenav) {
-            var buttons = carousel.querySelectorAll('#wcag-carousel-navigation button');
+          var buttons = carousel.querySelectorAll('#wcag-carousel-navigation button');
             for (var i = buttons.length - 1; i >= 0; i--) {
-                buttons[i].classList.remove("current");
+              removeClass(buttons[i], "current");
             };
-            buttons[new_current].classList.add("current");
+            addClass(buttons[new_current], "current");
         }
 
         if (setFocus) {
